@@ -5,7 +5,6 @@
     "description": "AI Guard checks website safety and displays a visual indicator.",
     "permissions": [
         "scripting",
-        "tabs",
         "activeTab"
     ],
     "host_permissions": [
