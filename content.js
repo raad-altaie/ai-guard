@@ -22,18 +22,18 @@
             .join('\n');
     }
 
-    // Create the indicator dot
-    const indicator = document.createElement("div");
-    indicator.style.position = "fixed";
-    indicator.style.top = "10px";
-    indicator.style.right = "10px";
-    indicator.style.width = "20px";
-    indicator.style.height = "20px";
-    indicator.style.borderRadius = "50%";
-    indicator.style.backgroundColor = match ? "green" : "red";
-    indicator.style.zIndex = "99999";
-    indicator.style.boxShadow = "0 0 6px rgba(0,0,0,0.3)";
-    indicator.title = tooltip;
 
-    document.body.appendChild(indicator);
+    // Check if the current document is the top-level document and not in an iframe
+    if (window.self === window.top && window.frameElement === null) {
+        const indicatorSpan = document.createElement("span");
+        indicatorSpan.setAttribute("id", "indicator");
+        indicatorSpan.setAttribute("title", tooltip);
+
+        // add location based on the option
+        indicatorSpan.style.backgroundColor = match ? "green" : "red";
+
+        document.body.appendChild(indicatorSpan);
+
+    }
+
 })();

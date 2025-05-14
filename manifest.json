@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "AI Guard",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "AI Guard checks website safety and displays a visual indicator.",
     "permissions": [
         "scripting",
@@ -20,13 +20,18 @@
             ],
             "js": [
                 "content.js"
-            ]
+            ],
+            "css": [
+                "content.css"
+            ],
+            "all_frames": false
         }
     ],
     "web_accessible_resources": [
         {
             "resources": [
-                "ai-websites.json"
+                "ai-websites.json",
+                 "content.css"
             ],
             "matches": [
                 "<all_urls>"
